@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "PfvDJ5l09xcAqol6Cx6cVFDEk3188JNjWiIEOZ2EciEsRYjTgu+EnF+NXHwygdsxJbY6wejirncmyy/zh/UtFA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
+    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Api1 is not compatible with net45 (.NETFramework,Version=v4.5). Project Api1 supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Api1",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5"
+      ]
+    }
+  ]
+}
