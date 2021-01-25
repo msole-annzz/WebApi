@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiNTests\\ApiNTests\\ApiNTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiNTests\\ApiNTests\\ApiNTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiNTests\\ApiNTests\\ApiNTests.csproj",
+        "projectName": "ApiNTests",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiNTests\\ApiNTests\\ApiNTests.csproj",
+        "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiNTests\\ApiNTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\OUT-Dutova2-OA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.16.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

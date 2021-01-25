@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TFEr7MzIcVlupwASarOfjQYpQ3uPnNI4nKo/ehWemOZGZ04YMlQmQMTxe2Ub4qlocE0CAfUsKn2gUwLCzlVj4Q==",
+  "dgSpecHash": "n7Ncvbpnc2srrTTY6/JRsyuykhFK3dHMGQuVtyACw60hQRVNcvCPp8Sf4kWbwz8ySLJwf1sW4mKRLiQ2s3Nl/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj",
   "expectedPackageFiles": [
@@ -83,7 +83,7 @@
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
-    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nunit\\3.13.0\\nunit.3.13.0.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\nunit3testadapter\\4.0.0-beta.1\\nunit3testadapter.4.0.0-beta.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",

@@ -20,6 +20,7 @@ using System.IO;
 using Microsoft.OpenApi.Models;//для использования в классе OpenApiInfo
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.Text.Json.Serialization;
+using Api1.DocsServices.BLL;
 
 namespace Api1
 {
@@ -49,6 +50,8 @@ namespace Api1
                 options.UseSqlServer(connection));
 
 
+            
+            services.AddSingleton<IDocsService, DocsService>();//
 
 
             //конвертирует Enum в Json, благодаря этому на странице в cswagger отображается категория текстом, а не цифрами
