@@ -929,3 +929,6 @@ Content root path: C:\Users\OUT-Dutova2-OA\Desktop\Api1\Api1
 Application started. Press Ctrl+C to shut down.
 Hosting environment: Development
 Content root path: C:\Users\OUT-Dutova2-OA\source\repos\Api1Git\Api1
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api1

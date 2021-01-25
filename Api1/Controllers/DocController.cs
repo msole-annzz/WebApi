@@ -21,6 +21,9 @@ namespace Api1.Controllers
         DocContext _context;
         IWebHostEnvironment _appEnvironment;
         private readonly IDocsService _services;
+        //cистема внедрения зависимостей использует конструкторы классов для передачи всех зависимостей.
+        //Соответственно в конструкторе контроллера мы можем получить зависимость. 
+        //Конструкторы являются наиболее предпочтительным вариантом для получения зависимостей
 
         public DocController(DocContext context, IWebHostEnvironment appEnvironment, IDocsService services)
         {

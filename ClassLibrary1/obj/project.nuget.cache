@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "TGcnopgTHY0CdYGJPptBTltV1/WeBLBUtD6URPq3PSR7M0pkKzsV5kYwtfbBzyKdrEnCrd4wIre823p2IY+B+Q==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ClassLibrary1\\ClassLibrary1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Api1 is not compatible with netstandard2.0 (.NETStandard,Version=v2.0). Project Api1 supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Api1",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

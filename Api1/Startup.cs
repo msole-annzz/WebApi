@@ -49,6 +49,8 @@ namespace Api1
                 options.UseSqlServer(connection));
 
 
+
+
             //конвертирует Enum в Json, благодаря этому на странице в cswagger отображается категория текстом, а не цифрами
             services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 

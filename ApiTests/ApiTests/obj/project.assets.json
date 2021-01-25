@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {
+    ".NETFramework,Version=v5.0": {
       "Microsoft.CodeCoverage/16.5.0": {
         "type": "package",
         "compile": {
@@ -48,13 +48,7 @@
       },
       "Api1/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
-        "compile": {
-          "bin/placeholder/Api1.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Api1.dll": {}
-        }
+        "framework": "Unsupported,Version=v0.0"
       }
     }
   },
@@ -169,12 +163,12 @@
     },
     "Api1/1.0.0": {
       "type": "project",
-      "path": "../Api1/Api1.csproj",
-      "msbuildProject": "../Api1/Api1.csproj"
+      "path": "../../Api1/Api1.csproj",
+      "msbuildProject": "../../Api1/Api1.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.5": [
+    ".NETFramework,Version=v5.0": [
       "Api1 >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "NUnit >= 3.12.0",
@@ -188,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj",
-      "projectName": "Api1.Tests",
-      "projectPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj",
+      "projectName": "ApiTests",
+      "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj",
       "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\obj\\",
+      "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -202,17 +196,17 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net45"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net45": {
+        "net50": {
           "projectReferences": {
-            "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj": {
-              "projectPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj"
+            "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj": {
+              "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj"
             }
           }
         }
@@ -224,7 +218,7 @@
       }
     },
     "frameworks": {
-      "net45": {
+      "net50": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -247,10 +241,10 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "Project Api1 is not compatible with net45 (.NETFramework,Version=v4.5). Project Api1 supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "message": "Project Api1 is not compatible with net50 (.NETFramework,Version=v5.0). Project Api1 supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
       "libraryId": "Api1",
       "targetGraphs": [
-        ".NETFramework,Version=v4.5"
+        ".NETFramework,Version=v5.0"
       ]
     }
   ]

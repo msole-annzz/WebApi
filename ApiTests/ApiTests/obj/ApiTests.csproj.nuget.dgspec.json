@@ -1,75 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj": {}
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj",
-        "projectName": "Api1.Tests",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\Api1.Tests.csproj",
-        "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1.Tests\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\OUT-Dutova2-OA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net45"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net45": {
-            "projectReferences": {
-              "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj": {
-                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net45": {
-          "dependencies": {
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[16.5.0, )"
-            },
-            "NUnit": {
-              "target": "Package",
-              "version": "[3.12.0, )"
-            },
-            "NUnit3TestAdapter": {
-              "target": "Package",
-              "version": "[3.16.1, )"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj",
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj",
         "projectName": "Api1",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\Api1.csproj",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj",
         "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\Desktop\\Api1\\Api1\\obj\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -174,6 +116,64 @@
             },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj",
+        "projectName": "ApiTests",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\ApiTests.csproj",
+        "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\ApiTests\\ApiTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\OUT-Dutova2-OA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net50": {
+            "projectReferences": {
+              "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj": {
+                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\Api1\\Api1.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net50": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.16.1, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
