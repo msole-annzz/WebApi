@@ -7,6 +7,7 @@ using Api1.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace Api1.DocsServices.BLL
 {
@@ -14,11 +15,13 @@ namespace Api1.DocsServices.BLL
     {
         private readonly DocContext _context;
         private readonly IWebHostEnvironment _appEnvironment;
+        private readonly IConfiguration _configuration;
 
-        public DocsService(DocContext context, IWebHostEnvironment appEnvironment)
+        public DocsService(DocContext context, IWebHostEnvironment appEnvironment, IConfiguration configuration)
         {
             _context = context;
             _appEnvironment = appEnvironment;
+            this._configuration = configuration;
         }
         public async Task UploadFileAsync(IFormFile uploadeDoc, CategoryDTO category)
         {

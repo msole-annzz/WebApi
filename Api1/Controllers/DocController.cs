@@ -42,7 +42,7 @@ namespace Api1.Controllers
            
             try
             {
-                await _services.UploadFileAsync(uploadeDoc, category);
+                await _services.UploadFileAsync(uploadeDoc, category);//обращение
                 return CreatedAtAction("Success! File was upload", uploadeDoc);
             }
             catch (Exception exc)

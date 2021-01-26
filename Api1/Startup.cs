@@ -14,7 +14,6 @@ using Microsoft.EntityFrameworkCore;
 using Api1.Models;
 using Microsoft.AspNetCore.Http;
 // ниже для настройки swagger
-using System;
 using System.Reflection;
 using System.IO;
 using Microsoft.OpenApi.Models;//для использования в классе OpenApiInfo
@@ -51,7 +50,13 @@ namespace Api1
 
 
             
-            services.AddSingleton<IDocsService, DocsService>();//
+            services.AddScoped<IDocsService, DocsService>();
+            //Transient(временный): при каждом обращении к сервису создается новый объект сервиса. 
+            //Scoped(областной): для каждого запроса создается свой объект сервиса.То есть если в течение одного запроса есть несколько обращений к одному сервису, 
+            //то при всех этих обращениях будет использоваться один и тот же объект сервиса.
+            //Singleton: объект сервиса создается при первом обращении к нему, все последующие запросы используют один и тот же ранее созданный объект сервиса
+
+
 
 
             //конвертирует Enum в Json, благодаря этому на странице в cswagger отображается категория текстом, а не цифрами

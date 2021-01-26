@@ -12,12 +12,9 @@ namespace Api1.DocsServices.BLL
     {
         Task UploadFileAsync(IFormFile uploadeDoc, CategoryDTO category);
         IList<Doc> GetDocs(Category? category);
-
         IList<Doc> GetDoc(string name);
-
         Task<byte[]> DownloadDocAsync(string name, int category, int? release);
         Doc ChangeCategory(string name, Category oldCategory, Category newCategory);
-
         Doc DeleteDoc(string name, Category category);
     }
 }
