@@ -14,14 +14,15 @@ namespace Api1.DocsServices.BLL
     public class DocsService : IDocsService
     {
         private readonly DocContext _context;
-        private readonly IWebHostEnvironment _appEnvironment;
+        //private readonly IWebHostEnvironment _appEnvironment;
         private readonly IConfiguration _configuration;
 
-        public DocsService(DocContext context, IWebHostEnvironment appEnvironment, IConfiguration configuration)
+        //public DocsService(DocContext context, IWebHostEnvironment appEnvironment, IConfiguration configuration)
+        public DocsService(DocContext context, IConfiguration configuration)
         {
             _context = context;
-            _appEnvironment = appEnvironment;
-            this._configuration = configuration;
+            //_appEnvironment = appEnvironment;
+            _configuration = configuration;
         }
         public async Task UploadFileAsync(IFormFile uploadeDoc, CategoryDTO category)
         {
@@ -40,7 +41,8 @@ namespace Api1.DocsServices.BLL
                 };
                 _context.Docs.Add(same);
             }
-            string path = $"{_appEnvironment.ContentRootPath}/Files/{category}_{release}_{uploadeDoc.FileName}";
+            //string path = $"{_appEnvironment.ContentRootPath}/Files/{category}_{release}_{uploadeDoc.FileName}";
+            string path = $"{_configuration.GetValue<string>("Path")}/{category}_{release}_{uploadeDoc.FileName}";
 
             var version = new Models.Version
             {
@@ -121,7 +123,8 @@ namespace Api1.DocsServices.BLL
             foreach (var v in doc.Versions)
             {
                 string oldPath = v.Path;
-                string newPath = $"{_appEnvironment.ContentRootPath}/Files/{newCategory}_{v.Release}_{name}";
+                //string newPath = $"{_appEnvironment.ContentRootPath}/Files/{newCategory}_{v.Release}_{name}";
+                string newPath = $"{_configuration.GetValue<string>("Path")}/{newCategory}_{v.Release}_{name}";
 
                 System.IO.File.Move(oldPath, newPath, true);
                 v.Path = newPath;
