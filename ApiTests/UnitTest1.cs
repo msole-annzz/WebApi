@@ -2,27 +2,35 @@ using Api1.DocsServices.BLL;
 using Api1.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ApiTests
 {
     public class Tests
-    { 
-        private DocsService docsService = new DocsService(
-            new DocContext (new DbContextOptionsBuilder<DocContext>().UseInMemoryDatabase("DocsList").Options), 
-            new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build());
+    {
+        DocContext docContext = new DocContext(new DbContextOptionsBuilder<DocContext>().UseInMemoryDatabase("DocsList").Options);
+        private DocsService docsService; 
+        IServiceProvider ServiceProvider;
+
 
       
 
         [SetUp]
         public void Setup()
         {
+            docsService = new DocsService(docContext,
+            new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build());
+
+            ServiceProvider = Api1.Program.CreateHostBuilder(new string[0]).Build().Services;
+
             var doc = new Doc
             {
                 Category = Category.APPLICATION,
@@ -38,17 +46,17 @@ namespace ApiTests
                 Path = @"C:\\Files\\Tests",
             };
 
-            DocsService._context.Add(doc);// как обратиться к контексту, который создается в начале, in memory?
-            dbContext.Versions.Add(ver);
-            int res = dbContext.SaveChanges();
+            docContext.Add(doc);// как обратиться к контексту, который создается в начале, in memory?
+            docContext.Versions.Add(ver);
+            int res = docContext.SaveChanges();
         }
 
         [Test]
         public void GetDocs_Get1Doc_NotNull()
         // [Тестируемый метод]_[Сценарий]_[Ожидаемое поведение].
         {
-
-            List<Doc> result = DocsService.GetDocs();//почумц не позволяет обратиться к сервисам моим?
+            DocsService ApiService = ServiceProvider.GetService<DocsService>();
+            IList <Doc> result = ApiService.GetDocs(null);//почему не позволяет обратиться к сервисам моим?
 
             Assert.NotNull(result);
         }
