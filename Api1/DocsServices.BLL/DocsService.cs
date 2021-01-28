@@ -115,8 +115,6 @@ namespace Api1.DocsServices.BLL
             }
         }
 
-
-
         public async Task<byte[]> DownloadDocAsync(string name, int category, int? release)
         {
             byte[] Mass = null;
