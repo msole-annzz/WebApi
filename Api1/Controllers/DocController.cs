@@ -10,9 +10,12 @@ using System.Collections.Generic;
 using System;
 
 using Api1.DocsServices.BLL;
+using Api1.Resources;
+using Microsoft.Extensions.Logging;
 
 namespace Api1.Controllers
 {
+
 
     [Route("Files")]
     [ApiController]
@@ -21,20 +24,31 @@ namespace Api1.Controllers
         DocContext _context;
         IWebHostEnvironment _appEnvironment;
         private readonly IDocsService _services;
+        private readonly ILogger<WelcomeController> _logger;
         //cистема внедрения зависимостей использует конструкторы классов для передачи всех зависимостей.
         //Соответственно в конструкторе контроллера мы можем получить зависимость. 
         //Конструкторы являются наиболее предпочтительным вариантом для получения зависимостей
 
-        public DocController(DocContext context, IWebHostEnvironment appEnvironment, IDocsService services)
+        //private readonly ILogger<WelcomeController> _logger;
+
+        //public DocController(ILogger<WelcomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        public DocController(DocContext context, IWebHostEnvironment appEnvironment, IDocsService services, ILogger<WelcomeController> logger)
         {
             _context = context;
             _appEnvironment = appEnvironment;
             _services = services;
+            _logger = logger;
         }
         [Route("Upload")]
         [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile uploadeDoc, CategoryDTO category)
         {
+            _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                   DateTime.Now.ToLongTimeString() + ": Try to upload file");
             if ((int)category < 1 || (int)category > 3)
                 return BadRequest("Upload was not successful.\r\n Invalid category.\r\n Please, select correct category");
             if (uploadeDoc == null)
@@ -43,6 +57,8 @@ namespace Api1.Controllers
             try
             {
                 await _services.UploadFileAsync(uploadeDoc, category);//обращение
+                _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": File was upload");
                 return CreatedAtAction("Success! File was upload", uploadeDoc);
             }
             catch (Exception exc)
@@ -56,8 +72,13 @@ namespace Api1.Controllers
         [HttpGet]
         public IActionResult GetDocs(Category? category)
         {
-            if (((int)category >= 1 && (int)category <= 3) || (category == null))
-                return Ok(_services.GetDocs(category));// что будет с параметром, если будет null
+            if ((category == null) || ((int)category >= 1 && (int)category <= 3))
+            {
+                var docs = _services.GetDocs(category);
+                _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": Get all files");
+                return Ok(Map(docs));// что будет с параметром, если будет null
+            }
             //if (category != null)
             //    return Ok(_context.Docs.Include(p => p.Versions).ToList());
             else
@@ -74,8 +95,37 @@ namespace Api1.Controllers
             {
                 return NotFound("The file with the specified name was not found");
             }
-            return Ok(doc);
+            _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": Get a file");
+            return Ok(Map(doc));
         }
+
+
+        private ICollection<DocResuorce> Map(ICollection<Doc> docs)
+        {
+            var docsR = new List<DocResuorce>(docs.Count);
+
+            foreach (var doc in docs)
+            {
+                docsR.Add(new DocResuorce
+                {
+                    Id = doc.Id,
+                    Category = doc.Category,
+                    Name = doc.Name,
+                    Versions = doc.Versions.Select(x => new VersionResource
+                    {
+                        Id = x.Id,
+                        DocId = x.DocId,
+                        Path = x.Path,
+                        Release = x.Release,
+                        Size = x.Size,
+                        UploadDateTime = x.UploadDateTime,
+                    }).ToList(),
+                });
+            }
+            return docsR;
+        }
+
 
         [Route("Download")]
         [HttpGet]
@@ -86,7 +136,8 @@ namespace Api1.Controllers
             if (Mass != null)
                 try
                 {
-
+                    _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": File was download");
                     return File(Mass, "application/octet-stream", name); //Основной подтип 'Application/Octet-Stream'
                     // Используется для обозначения того, что тело содержит бинарные данные.
                     // MIME тип состоит из типа и подтипа — двух строк разделённых наклонной чертой (/), без использования пробелов.
@@ -113,19 +164,21 @@ namespace Api1.Controllers
             {
                 return BadRequest();
             }
+            _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": Category was changed");
             return doc;
         }
 
         [HttpDelete("Name")]
-        public async Task <ActionResult<Doc>> DeleteDoc(string name, Category category)
+        public ActionResult<Doc> DeleteDoc(string name, Category category)
         {
             var doc = _services.DeleteDoc(name, category);
             if (doc == null)
             {
                 return NotFound("This file was not found");
             }
-            _context.Docs.Remove(doc);
-            await _context.SaveChangesAsync();
+            _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
+                                    DateTime.Now.ToLongTimeString() + ": File was deleted");
             return doc;
         }
     }

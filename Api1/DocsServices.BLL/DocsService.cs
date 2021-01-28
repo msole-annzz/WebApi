@@ -26,7 +26,8 @@ namespace Api1.DocsServices.BLL
         }
         public async Task UploadFileAsync(IFormFile uploadeDoc, CategoryDTO category)
         {
-         
+            bool isNew = false;
+
             await _context.Docs.Include(x => x.Versions).LoadAsync();
             var same = _context.Docs.FirstOrDefault(x => x.Name == uploadeDoc.FileName && x.Category == (Category)category);
             int release = 1;
@@ -34,6 +35,7 @@ namespace Api1.DocsServices.BLL
                 release = same.Versions.OrderBy(x => x.Release).Last().Release + 1;
             else
             {
+                isNew = true;
                 same = new Doc
                 {
                     Category = (Category)category,
@@ -42,7 +44,7 @@ namespace Api1.DocsServices.BLL
                 _context.Docs.Add(same);
             }
             //string path = $"{_appEnvironment.ContentRootPath}/Files/{category}_{release}_{uploadeDoc.FileName}";
-            string path = $"{_configuration.GetValue<string>("Path")}/{category}_{release}_{uploadeDoc.FileName}";
+            string path = $"{_configuration.GetValue<string>("FilesPath")}/{category}_{release}_{uploadeDoc.FileName}";
 
             var version = new Models.Version
             {
@@ -57,6 +59,13 @@ namespace Api1.DocsServices.BLL
             try
             {
                 await _context.SaveChangesAsync();
+
+
+                if (!Directory.Exists(_configuration.GetValue<string>("FilesPath")))
+                {
+                    Directory.CreateDirectory(_configuration.GetValue<string>("FilesPath"));
+                }
+
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await uploadeDoc.CopyToAsync(fileStream);
@@ -70,6 +79,14 @@ namespace Api1.DocsServices.BLL
             catch (Exception fileStriem)
             {
                 // + откат изменений в БД
+
+                if (isNew)
+                {
+                    _context.Remove(same);
+                }
+
+                _context.Versions.Remove(version);
+
                 throw fileStriem;
             }
 
@@ -82,7 +99,7 @@ namespace Api1.DocsServices.BLL
             if (category != null)
                 return docs = _context.Docs.Include(p => p.Versions).Where(p => p.Category == category).ToList();
             else
-                return docs = (_context.Docs.Include(p => p.Versions).ToList()); 
+                return docs = _context.Docs.Include(p => p.Versions).ToList(); 
         }
         public IList<Doc> GetDoc(string name)
         {
@@ -93,8 +110,12 @@ namespace Api1.DocsServices.BLL
                 return null;
             }
             else
+            {
                 return docs;
+            }
         }
+
+
 
         public async Task<byte[]> DownloadDocAsync(string name, int category, int? release)
         {
@@ -124,7 +145,7 @@ namespace Api1.DocsServices.BLL
             {
                 string oldPath = v.Path;
                 //string newPath = $"{_appEnvironment.ContentRootPath}/Files/{newCategory}_{v.Release}_{name}";
-                string newPath = $"{_configuration.GetValue<string>("Path")}/{newCategory}_{v.Release}_{name}";
+                string newPath = $"{_configuration.GetValue<string>("FilesPath")}/{newCategory}_{v.Release}_{name}";
 
                 System.IO.File.Move(oldPath, newPath, true);
                 v.Path = newPath;
@@ -149,7 +170,19 @@ namespace Api1.DocsServices.BLL
                 return null;
             }
             _context.Docs.Remove(doc);
-            _context.SaveChangesAsync();
+
+            try
+            {
+                _context.SaveChangesAsync();
+                foreach(var ver in doc.Versions)
+                {
+                    File.Delete(ver.Path);
+                }
+            }
+            catch (Exception db)
+            {
+                throw db;
+            }
             return doc;
         }
     }

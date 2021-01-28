@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\WeatherForecast-DELETE_ME.cs" />
+    <Compile Remove="Data.DAL\Models\WeatherForecast-DELETE_ME.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +30,8 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 
 </Project>

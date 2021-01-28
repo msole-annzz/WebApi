@@ -60,7 +60,12 @@ namespace Api1
 
 
             //конвертирует Enum в Json, благодаря этому на странице в cswagger отображается категория текстом, а не цифрами
-            services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                options.JsonSerializerOptions.MaxDepth = 512;
+
+            });
 
             //подключаем swagger
             //Действие по настройке, передаваемое в метод AddSwaggerGen, 
