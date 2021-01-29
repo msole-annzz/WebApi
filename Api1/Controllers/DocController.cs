@@ -29,13 +29,6 @@ namespace Api1.Controllers
         //Соответственно в конструкторе контроллера мы можем получить зависимость. 
         //Конструкторы являются наиболее предпочтительным вариантом для получения зависимостей
 
-        //private readonly ILogger<WelcomeController> _logger;
-
-        //public DocController(ILogger<WelcomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
         public DocController(DocContext context, IWebHostEnvironment appEnvironment, IDocsService services, ILogger<DocController> logger)
         {
             _context = context;
@@ -68,7 +61,6 @@ namespace Api1.Controllers
         }
 
         [Route("All")]
-        //[Route("All or category")] поверить как отображается 
         [HttpGet]
         public IActionResult GetDocs(Category? category)
         {
@@ -77,13 +69,10 @@ namespace Api1.Controllers
                 var docs = _services.GetDocs(category);
                 _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
                                     DateTime.Now.ToLongTimeString() + ": Get all files");
-                return Ok(Map(docs));// что будет с параметром, если будет null
+                return Ok(Map(docs));
             }
-            //if (category != null)
-            //    return Ok(_context.Docs.Include(p => p.Versions).ToList());
             else
                 return BadRequest("Сategory was selected incorrectly.\r\n Please select one of the available options:\r\n Presentation (category = 1),\r\n Application(2),\r\n Other(3)");
-            //если категории поменяются комментарий будет некорректный, как сделать, чтобы подтягивалось автоматически???
         }
      
 
@@ -99,7 +88,6 @@ namespace Api1.Controllers
                                     DateTime.Now.ToLongTimeString() + ": Get a file");
             return Ok(Map(doc));
         }
-
 
         private ICollection<DocResuorce> Map(ICollection<Doc> docs)
         {
@@ -125,7 +113,6 @@ namespace Api1.Controllers
             }
             return docsR;
         }
-
 
         [Route("Download")]
         [HttpGet]
