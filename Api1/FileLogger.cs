@@ -21,8 +21,7 @@ namespace Api1.Models
         }
 
         public bool IsEnabled(LogLevel logLevel)
-        {
-            //return logLevel == LogLevel.Trace;
+        { 
             return true;
         }
 

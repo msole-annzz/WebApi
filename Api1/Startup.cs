@@ -35,42 +35,25 @@ namespace Api1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ////Добавляет контекст базы данных в контейнер внедрения зависимостей.
-            //// Указывает, что контекст базы данных будет использовать базу данных в памяти.
-            //services.AddDbContext<TodoContext>(opt =>
-              //opt.UseInMemoryDatabase("TodoList"));
            
-            
-            //services.AddDbContext<FilesContext>(opt =>
-            // opt.UseInMemoryDatabase("FilesList"));
-
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DocContext>(options =>
                 options.UseSqlServer(connection));
 
-
-            
             services.AddScoped<IDocsService, DocsService>();
             //Transient(временный): при каждом обращении к сервису создается новый объект сервиса. 
             //Scoped(областной): для каждого запроса создается свой объект сервиса.То есть если в течение одного запроса есть несколько обращений к одному сервису, 
             //то при всех этих обращениях будет использоваться один и тот же объект сервиса.
             //Singleton: объект сервиса создается при первом обращении к нему, все последующие запросы используют один и тот же ранее созданный объект сервиса
 
-
-
-
             //конвертирует Enum в Json, благодаря этому на странице в cswagger отображается категория текстом, а не цифрами
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                options.JsonSerializerOptions.MaxDepth = 512;
-
             });
 
             //подключаем swagger
-            //Действие по настройке, передаваемое в метод AddSwaggerGen, 
-            //можно использовать для добавления таких сведений, как автор, 
-            //лицензия и описание
+            //Действие по настройке, передаваемое в метод AddSwaggerGen, можно использовать для добавления таких сведений, как автор, лицензия и описание
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -81,16 +64,8 @@ namespace Api1
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Olga",
-                        Email = "annzz@yandex.ru",
-                        //Email = string.Empty,
-                        //Url = new Uri("https://twitter.com/spboyer"),
+                        Name = "Olga", 
                     },
-                    //License = new OpenApiLicense
-                    //{
-                    //    Name = "Use under LICX",
-                    //    Url = new Uri("https://example.com/license"),
-                    //}
                 });
             });
         }
@@ -102,9 +77,7 @@ namespace Api1
                 app.UseDeveloperExceptionPage();
             }
             //для логирования
-          
             loggerFactory.AddFile("logger.txt");
-            //var logger = loggerFactory.CreateLogger("FileLogger");
 
             // для обслуживания созданного документа JSON и пользовательского интерфейса Swagger.
             app.UseSwagger();

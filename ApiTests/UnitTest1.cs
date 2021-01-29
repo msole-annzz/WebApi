@@ -17,10 +17,7 @@ namespace ApiTests
         private DocsService docsService; 
         IServiceProvider ServiceProvider;
 
-
-      
-
-        [SetUp]
+        [SetUp]//Этот атрибут используется внутри тестовогоприспособления для предоставления общего набора функций, которые выполняются непосредственно перед вызовом каждого метода тестирования.
         public void Setup()
         {
             docsService = new DocsService(docContext,
@@ -43,20 +40,20 @@ namespace ApiTests
                 Release = 1,
                 Size = 1234,
                 UploadDateTime = DateTime.Now,
-                Path = @"C:\\Files\\Tests",
+                Path = @"C:\\Other\\Files\\Tests",
             };
 
-            docContext.Add(doc);// как обратиться к контексту, который создается в начале, in memory?
+            docContext.Add(doc);
             docContext.Versions.Add(ver);
-            int res = docContext.SaveChanges();
+            docContext.SaveChanges();
         }
 
-        [Test]
+        [Test] //Атрибут является одним из способов маркировки метода внутри класса TestFixture в качестве теста
         public void GetDocs_Get1Doc_NotNull()
         // [Тестируемый метод]_[Сценарий]_[Ожидаемое поведение].
         {
             DocsService ApiService = ServiceProvider.GetService<DocsService>();
-            IList <Doc> result = ApiService.GetDocs(null);//почему не позволяет обратиться к сервисам моим?
+            IList <Doc> result = ApiService.GetDocs(null);
 
             Assert.NotNull(result);
         }

@@ -9,7 +9,6 @@ namespace Api1.Models
 {
     public class Version
     {
-
         public int Id { get; set; }
         public long Size { get; set; }
         public DateTime UploadDateTime { get; set; }

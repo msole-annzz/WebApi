@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\ApiTests\\ApiTests.csproj": {}
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj",
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
         "projectName": "Api1",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
         "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\obj\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\ApiTests\\ApiTests.csproj": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\ApiTests\\ApiTests.csproj",
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj",
         "projectName": "ApiTests",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\ApiTests\\ApiTests.csproj",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj",
         "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\ApiTests\\obj\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -150,8 +150,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj": {
-                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj"
+              "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj": {
+                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj"
               }
             }
           }

@@ -14,14 +14,11 @@ namespace Api1.DocsServices.BLL
     public class DocsService : IDocsService
     {
         private readonly DocContext _context;
-        //private readonly IWebHostEnvironment _appEnvironment;
         private readonly IConfiguration _configuration;
 
-        //public DocsService(DocContext context, IWebHostEnvironment appEnvironment, IConfiguration configuration)
         public DocsService(DocContext context, IConfiguration configuration)
         {
             _context = context;
-            //_appEnvironment = appEnvironment;
             _configuration = configuration;
         }
         public async Task UploadFileAsync(IFormFile uploadeDoc, CategoryDTO category)
@@ -43,7 +40,6 @@ namespace Api1.DocsServices.BLL
                 };
                 _context.Docs.Add(same);
             }
-            //string path = $"{_appEnvironment.ContentRootPath}/Files/{category}_{release}_{uploadeDoc.FileName}";
             string path = $"{_configuration.GetValue<string>("FilesPath")}/{category}_{release}_{uploadeDoc.FileName}";
 
             var version = new Models.Version
@@ -56,16 +52,14 @@ namespace Api1.DocsServices.BLL
             };
 
             _context.Versions.Add(version);
+
             try
             {
                 await _context.SaveChangesAsync();
-
-
                 if (!Directory.Exists(_configuration.GetValue<string>("FilesPath")))
                 {
                     Directory.CreateDirectory(_configuration.GetValue<string>("FilesPath"));
                 }
-
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await uploadeDoc.CopyToAsync(fileStream);
@@ -74,25 +68,18 @@ namespace Api1.DocsServices.BLL
             catch (DbUpdateException db)
             {
                 throw db;
-            // 
             }
             catch (Exception fileStriem)
             {
-                // + откат изменений в БД
-
                 if (isNew)
                 {
                     _context.Remove(same);
                 }
-
                 _context.Versions.Remove(version);
-
                 throw fileStriem;
             }
-
         }
 
-        // возвращается список, какое должно быть правильный возвращаемого значения в обоих методах?
         public IList<Doc> GetDocs(Category? category)
         {
             List<Doc> docs;
@@ -142,9 +129,7 @@ namespace Api1.DocsServices.BLL
             foreach (var v in doc.Versions)
             {
                 string oldPath = v.Path;
-                //string newPath = $"{_appEnvironment.ContentRootPath}/Files/{newCategory}_{v.Release}_{name}";
                 string newPath = $"{_configuration.GetValue<string>("FilesPath")}/{newCategory}_{v.Release}_{name}";
-
                 System.IO.File.Move(oldPath, newPath, true);
                 v.Path = newPath;
             }

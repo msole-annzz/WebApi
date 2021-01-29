@@ -17,7 +17,6 @@ namespace Api1.Models
         {
             return new FileLogger(path);
         }
-
         public void Dispose()
         {
         }

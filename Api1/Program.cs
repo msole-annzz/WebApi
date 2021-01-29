@@ -18,11 +18,11 @@ namespace Api1
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .ConfigureLogging(x =>  // для логгирования в коноль
-            {
-                x.ClearProviders();// удаляет др логирование
-                x.AddConsole();// добавляет логгирование в консоль
-            })
+            //.ConfigureLogging(x =>  // для логгирования в коноль
+            //{
+            //    x.ClearProviders();// удаляет др логирование
+            //    x.AddConsole();// добавляет логгирование в консоль
+            //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

@@ -9005,11 +9005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj",
+      "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
       "projectName": "Api1",
-      "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\Api1.csproj",
+      "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
       "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\fromV\\Api1\\obj\\",
+      "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
