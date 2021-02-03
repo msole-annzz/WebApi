@@ -12,6 +12,7 @@ using System;
 using Api1.DocsServices.BLL;
 using Api1.Resources;
 using Microsoft.Extensions.Logging;
+using Api1.Data.DAL.Models;
 
 namespace Api1.Controllers
 {

@@ -20,6 +20,8 @@ using Microsoft.OpenApi.Models;//для использования в классе OpenApiInfo
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.Text.Json.Serialization;
 using Api1.DocsServices.BLL;
+using Api1.Data.DAL.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Api1
 {
@@ -68,6 +70,12 @@ namespace Api1
                     },
                 });
             });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -93,6 +101,7 @@ namespace Api1
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

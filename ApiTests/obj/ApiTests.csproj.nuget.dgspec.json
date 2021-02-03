@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj": {}
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\ApiTests\\ApiTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\Api1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\Api1.csproj",
         "projectName": "Api1",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\Api1.csproj",
         "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\obj\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\OUT-Dutova2-OA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "DeveloperForce.Force": {
               "target": "Package",
@@ -120,22 +119,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj": {
+    "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\ApiTests\\ApiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj",
+        "projectUniqueName": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\ApiTests\\ApiTests.csproj",
         "projectName": "ApiTests",
-        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj",
+        "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\ApiTests\\ApiTests.csproj",
         "packagesPath": "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\obj\\",
+        "outputPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\ApiTests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\OUT-Dutova2-OA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -149,9 +145,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj": {
-                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj"
+              "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\Api1.csproj": {
+                "projectPath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi1.2\\Api1\\Api1.csproj"
               }
             }
           }
@@ -164,6 +161,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -196,7 +194,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

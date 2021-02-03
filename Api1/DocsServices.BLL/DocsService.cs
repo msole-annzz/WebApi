@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using Microsoft.Extensions.Configuration;
+using Api1.Data.DAL.Models;
 
 namespace Api1.DocsServices.BLL
 {

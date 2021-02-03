@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api1.Data.DAL.Models;
+using Api1.Models;
 
-
-namespace Api1.Models
+namespace Api1.Data.DAL.Models
 {
     public class DocContext : DbContext
     {
@@ -13,6 +14,8 @@ namespace Api1.Models
             : base(options){}
         //для файлов
         public DbSet<Doc> Docs { get; set; }
-        public DbSet<Version> Versions { get; set; }
+        public DbSet<Api1.Models.Version> Versions { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
