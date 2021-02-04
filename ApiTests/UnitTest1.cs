@@ -14,7 +14,7 @@ namespace ApiTests
     public class Tests
     {
         DocContext docContext = new DocContext(new DbContextOptionsBuilder<DocContext>().UseInMemoryDatabase("DocsList").Options);
-        private DocsService docsService; 
+        private IDocsService docsService; 
         IServiceProvider ServiceProvider;
 
         [SetUp]//Этот атрибут используется внутри тестовогоприспособления для предоставления общего набора функций, которые выполняются непосредственно перед вызовом каждого метода тестирования.
@@ -52,7 +52,7 @@ namespace ApiTests
         public void GetDocs_Get1Doc_NotNull()
         // [Тестируемый метод]_[Сценарий]_[Ожидаемое поведение].
         {
-            DocsService ApiService = ServiceProvider.GetService<DocsService>();
+            IDocsService ApiService = ServiceProvider.GetService<IDocsService>();
             IList <Doc> result = ApiService.GetDocs(null);
 
             Assert.NotNull(result);

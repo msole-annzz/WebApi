@@ -89,13 +89,13 @@ namespace Api1.Controllers
             return Ok(Map(doc));
         }
 
-        private ICollection<DocResuorce> Map(ICollection<Doc> docs)
+        private ICollection<DocResource> Map(ICollection<Doc> docs)
         {
-            var docsR = new List<DocResuorce>(docs.Count);
+            var docsR = new List<DocResource>(docs.Count);
 
             foreach (var doc in docs)
             {
-                docsR.Add(new DocResuorce
+                docsR.Add(new DocResource
                 {
                     Id = doc.Id,
                     Category = doc.Category,
@@ -112,6 +112,25 @@ namespace Api1.Controllers
                 });
             }
             return docsR;
+        }
+
+        private DocResource MapForOne(Doc doc)
+        {
+            return new DocResource
+            {
+                Id = doc.Id,
+                Category = doc.Category,
+                Name = doc.Name,
+                Versions = doc.Versions.Select(x => new VersionResource
+                {
+                    Id = x.Id,
+                    DocId = x.DocId,
+                    Path = x.Path,
+                    Release = x.Release,
+                    Size = x.Size,
+                    UploadDateTime = x.UploadDateTime,
+                }).ToList(),
+            };
         }
 
         [Route("Download")]
@@ -144,7 +163,7 @@ namespace Api1.Controllers
 
         [Route("Category")]
         [HttpPatch]
-        public ActionResult<Doc> ChangeCategory(string name, Category oldCategory, Category newCategory)
+        public ActionResult<DocResource> ChangeCategory(string name, Category oldCategory, Category newCategory)
         {
             var doc = _services.ChangeCategory(name, oldCategory, newCategory);
             if (doc == null)
@@ -153,7 +172,7 @@ namespace Api1.Controllers
             }
             _logger.LogInformation(DateTime.Now.ToShortDateString() + "\r\n" +
                                     DateTime.Now.ToLongTimeString() + ": Category was changed");
-            return doc;
+            return MapForOne(doc);
         }
 
         [HttpDelete("Name")]

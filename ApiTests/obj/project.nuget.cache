@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oKYxdEiPrU/JyT5fdfk3aENc6lDJLKCr/4pcgcXZnFW/UD/H749/2oCH+YkO3cyNHeU6u0TsAAxP34Cu8ObUZg==",
+  "dgSpecHash": "+likR3N2ug/tUgKpe8ADPlujCc2YVXMFRKN7d8HHhnEOprMCzsL03KKxrWsMDhnlAwW4W0nhN+p0L6k23FEGZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\ApiTests\\ApiTests.csproj",
+  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\WebApi\\ApiTests\\ApiTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\developerforce.force\\2.1.0\\developerforce.force.2.1.0.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qaPWJDGJs2Rr66nio0522lifux28XHE1QckkU7/oydFzfV+zIEI+E6ZsulABmH9X1uisJ4IB4jVBASEwlddZDQ==",
+  "dgSpecHash": "7FoPlhfveMTmNrVN7h5nT2A78y+Y6V4Zi7XV9KFIyIkeI302x2uDN440JmbDSd9brw/IXzkq6G8o7hKdUPzLfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\FromGit\\Api1\\Api1.csproj",
+  "projectFilePath": "C:\\Users\\OUT-Dutova2-OA\\source\\repos\\WebApi\\WebApi\\Api1\\Api1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\developerforce.force\\2.1.0\\developerforce.force.2.1.0.nupkg.sha512",
     "C:\\Users\\OUT-Dutova2-OA\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
