@@ -1,0 +1,36 @@
+C:\Users\VIT\Desktop\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.dll
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csprojAssemblyReference.cache
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfoInputs.cache
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfo.cs
+C:\Users\VIT\Desktop\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.deps.json
+C:\Users\VIT\Desktop\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.dll
+C:\Users\VIT\Desktop\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.pdb
+C:\Users\VIT\Desktop\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.pdb
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CoreCompileInputs.cache
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CopyComplete
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.dll
+C:\Users\VIT\Desktop\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.pdb
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.deps.json
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.dll
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.pdb
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.dll
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.pdb
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csprojAssemblyReference.cache
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfoInputs.cache
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfo.cs
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CoreCompileInputs.cache
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CopyComplete
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.dll
+E:\Проекты\C Sharp\Сторонние\Веб\Api\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.pdb
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.deps.json
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.dll
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\bin\Debug\netcoreapp3.1\Api.BLL.pdb
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.dll
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\bin\Debug\netcoreapp3.1\Api.DAL.pdb
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csprojAssemblyReference.cache
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfoInputs.cache
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.AssemblyInfo.cs
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CoreCompileInputs.cache
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.csproj.CopyComplete
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.dll
+C:\Users\OUT-Dutova2-OA\source\repos\WebApi\Api.BLL\obj\Debug\netcoreapp3.1\Api.BLL.pdb
