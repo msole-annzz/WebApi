@@ -7,8 +7,8 @@ namespace Api1.Models
 {
     public enum Category
     {
-        NONE,
-        PRESENTATION,
+        
+        PRESENTATION = 1,
         APPLICATION,
         OTHER
     }

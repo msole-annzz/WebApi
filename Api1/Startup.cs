@@ -20,6 +20,7 @@ using Microsoft.OpenApi.Models;//для использования в классе OpenApiInfo
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.Text.Json.Serialization;
 using Api1.DocsServices.BLL;
+using Api1.Logger;
 
 namespace Api1
 {
@@ -38,8 +39,9 @@ namespace Api1
            
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DocContext>(options =>
-                options.UseSqlServer(connection));
-
+                                             options.UseSqlServer(connection));
+     //options.UseInMemoryDatabase("DocsList"));
+            
             services.AddScoped<IDocsService, DocsService>();
             //Transient(временный): при каждом обращении к сервису создается новый объект сервиса. 
             //Scoped(областной): для каждого запроса создается свой объект сервиса.То есть если в течение одного запроса есть несколько обращений к одному сервису, 
@@ -51,6 +53,8 @@ namespace Api1
             {
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
+
+           // services.AddSingleton<ILogStorage, FileLoggerStorage>();//добавляем свой новый сервис файл для хранениия логов на базе ILogStorage
 
             //подключаем swagger
             //Действие по настройке, передаваемое в метод AddSwaggerGen, можно использовать для добавления таких сведений, как автор, лицензия и описание
@@ -76,8 +80,7 @@ namespace Api1
             {
                 app.UseDeveloperExceptionPage();
             }
-            //для логирования
-            loggerFactory.AddFile("logger.txt");
+          
 
             // для обслуживания созданного документа JSON и пользовательского интерфейса Swagger.
             app.UseSwagger();
@@ -94,6 +97,8 @@ namespace Api1
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //app.UseMiddleware<LoggerMiddleware>(); //добавляем свой LogMiddleware
 
             app.UseEndpoints(endpoints =>
             {
